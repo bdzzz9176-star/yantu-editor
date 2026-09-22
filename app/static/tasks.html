@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>研途编辑｜任务与资料</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/styles.css"></head>
+<body>
+  <header class="topbar"><div class="brand-mark">研</div><div><strong>研途编辑</strong><span>任务与可复用资料库</span></div><div class="local-badge">本地运行</div></header>
+  <main>
+    <section class="hero compact-hero"><div><p class="eyebrow">下一阶段</p><h1>新建任务与复用资料</h1><p class="hero-copy">资料只上传一次。创建不同学校或不同选题时，勾选已有资料即可引用，不会复制原文件。</p></div><div class="status-card"><span>当前模式</span><strong>单用户本地版</strong><small>资料库全局复用，任务独立引用</small></div></section>
+    <section class="panel"><div class="panel-heading"><div><p class="eyebrow">第一步</p><h2>上传资料</h2></div><span class="count-tag" id="material-count">0份</span></div>
+      <div class="form-grid"><label class="full-field"><span>选择文件（可多选）</span><input id="material-file" type="file" multiple accept=".pdf,.docx,.html,.xlsx,.csv,.txt,.md"></label><label><span>资料年份</span><input id="material-year" placeholder="例如：2027"></label><label><span>资料类型</span><input id="material-type" value="择校手册" placeholder="官网通知、择校手册、参考稿……"></label></div>
+      <button class="primary-wide spaced-button" id="upload-material">上传到资料库</button><p id="upload-message" class="field-help">单个文件不超过100MB；可同时上传多份并在任务中共同引用。</p><div id="material-list" class="material-list"></div>
+    </section>
+    <section class="panel"><div class="panel-heading"><div><p class="eyebrow">第二步</p><h2>创建内容任务</h2></div></div>
+      <div class="form-grid"><label><span>选题类型</span><select id="topic-type"><option value="school_analysis">单校择校分析</option><option value="employment">就业选题</option><option value="major_direction">专业方向解析</option></select></label><label><span>目标年份</span><input id="target-year" value="2027"></label><label><span>学校</span><input id="task-school" list="school-options" placeholder="输入或选择手册中的学校"><datalist id="school-options"></datalist></label><label><span>学院</span><input id="task-college" placeholder="例如：信息与通信工程学院"></label><label class="full-field"><span>任务名称</span><input id="task-title" placeholder="单校任务可留空，系统自动生成名称"></label></div>
+      <div id="school-match" class="decision-box" hidden></div>
+      <h3 class="subheading">引用已有资料</h3><div id="material-picker" class="material-picker"></div>
+      <button class="primary-wide spaced-button" id="create-task">创建任务</button><p id="task-message" class="field-help"></p>
+    </section>
+    <section class="panel"><div class="panel-heading"><div><p class="eyebrow">工作台</p><h2>任务列表</h2></div><span class="count-tag" id="task-count">0个</span></div><div id="task-list" class="task-list"></div></section>
+  </main><script src="/tasks.js"></script>
+</body></html>
+
