@@ -1,0 +1,38 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+.deps/
+vendor/
+
+# Secrets and machine-local configuration
+config/model_credentials*.json
+.env
+.env.*
+!.env.example
+
+# Private source material and generated artifacts
+data/
+imports/
+outputs/
+tmp/
+.tmp/
+tests/fixtures/
+
+# Generated documents and office temporary files
+*.docx
+*.pdf
+~$*
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Public demo placeholders
+!demo/
+!demo/**
+
