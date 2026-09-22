@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yantu-editor.local/schemas/source.schema.json",
+  "title": "研途编辑资料来源",
+  "type": "object",
+  "required": ["source_id", "title", "source_type", "trust_tier", "locator", "captured_at"],
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "source_type": {
+      "enum": ["official_web", "official_pdf", "official_excel", "user_pdf", "user_docx", "user_html", "manual_input"]
+    },
+    "trust_tier": {
+      "enum": ["primary_official", "secondary_reference", "user_assertion"]
+    },
+    "locator": {"type": "string", "minLength": 1},
+    "version": {"type": ["string", "null"]},
+    "captured_at": {"type": "string", "format": "date-time"},
+    "page_range": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
+
